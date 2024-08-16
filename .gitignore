@@ -1,5 +1,5 @@
 HELP.md
-target/
+#target/
 kubernete/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

@@ -1,0 +1,5 @@
+com/codecraftwithkevin/account_deletion_requests/DeletionRequestRepository.class
+com/codecraftwithkevin/account_deletion_requests/AccountDeletionRequestsApplication.class
+com/codecraftwithkevin/account_deletion_requests/DeletionRequestController.class
+com/codecraftwithkevin/account_deletion_requests/RedisConfig.class
+com/codecraftwithkevin/account_deletion_requests/DeletionRequest.class
