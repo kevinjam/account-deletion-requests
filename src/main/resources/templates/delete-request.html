@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .alert {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .alert.error {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Request Account and Data Deletion</h1>
+
+    <div th:if="${success != null}">
+        <div th:class="${success == 'true'} ? 'alert' : 'alert error'">
+            <span th:text="${success == 'true'} ? 'Your request was submitted successfully!' : 'There was an error submitting your request. Please try again.'"></span>
+        </div>
+    </div>
+
+    <form th:action="@{/api/delete-request}" method="post">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="reason">Reason for Deletion Request</label>
+        <textarea id="reason" name="reason" required></textarea>
+
+        <button type="submit">Submit Request</button>
+    </form>
+</div>
+</body>
+</html>
